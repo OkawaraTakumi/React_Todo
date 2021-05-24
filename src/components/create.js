@@ -28,8 +28,8 @@ const Create = (props) => {
                 <li>チケット名<input name="ticketName" type="text" placeholder='チケット名を入力してください' /></li>
                 <li>詳細<textarea name="ticketDetail" cols="30" rows="10"></textarea></li>
                 <li>担当者<input name="personName" type="text" placeholder='担当者名を入力してください' /></li>
-                <li>期日<input name="deadLine" type="text" placeholder='期日を入力してください' /></li>
-                <li>開始日<input name="start" type="text"  placeholder='開始日を入力してください' /></li>
+                <li>期日<input name="deadLine" type="date" placeholder='期日を入力してください' /></li>
+                <li>開始日<input name="start" type="date"  placeholder='開始日を入力してください' /></li>
             </ul>
             <button onClick={(e)=>{getTicket(e)}}>チケットを作成</button>
         </React.Fragment>
