@@ -1,11 +1,12 @@
 import React from "react";
 import {BrowserRouter as Router,
     Switch,Route, useRouteMatch, Link} from 'react-router-dom';
-import TicketDetail from './ticketDetail';
 import{ connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 const Ticket = (props) =>{
-
+    const history = useHistory();
+    const handleLink = path => history.push(path);
     const match = useRouteMatch();
 
     return (
@@ -14,11 +15,12 @@ const Ticket = (props) =>{
             <Router>
                 <ol>
                 {props.ticketList.map((ticket,index) => {
-                    return (<Link  to={`/ticketDetail/${ticket.id}`}  key={index}><li>{ticket.ticketName}&nbsp;{ticket.personName}</li></Link>)
+                    return (<li key={index}><a onClick={()=>{handleLink(`/ticketDetail/${ticket.id}`)}} >{ticket.ticketName}&nbsp;{ticket.personName}</a></li>
+                              )
                 } )}
                 </ol>
                 <Switch>
-                    <Route path={`/ticketDetail/:taskIndex`} exact component={TicketDetail}/>
+                    
                 </Switch>
             </Router>
             
@@ -33,3 +35,4 @@ const mapStateToProps = state => ({
 
 export default  connect(mapStateToProps)(Ticket)
 
+// to={`/ticketDetail/${ticket.id}`}

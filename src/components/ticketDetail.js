@@ -13,7 +13,7 @@ const TicketDetail = (props) => {
         const detailName = detail ? detail.ticketName: ''
         const detailText = detail ? detail.ticketDetail: ''
         const detailPerson = detail ? detail.personName: '' 
-        const detailDeadline = detail ? detail.deadline: ''
+        const detailDeadLine = detail ? detail.deadLine: ''
         const detailStart = detail ? detail.start: ''
 
 
@@ -24,7 +24,7 @@ const TicketDetail = (props) => {
                         <li>チケット名:&nbsp;{detailName}</li>
                         <li>詳細:&nbsp;{detailText}</li>
                         <li>担当者:&nbsp;{detailPerson}</li>
-                        <li>期日:&nbsp;{detailDeadline}</li>
+                        <li>期日:&nbsp;{detailDeadLine}</li>
                         <li>開始日:&nbsp;{detailStart}</li>
                     </ul>
                     <button type="button" onClick={()=>{handleLink('/')}}>トップに戻る</button>

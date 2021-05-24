@@ -3,9 +3,9 @@ import React from "react";
 import {BrowserRouter as Router,
         Switch,Route} from 'react-router-dom';
 import Create from './create.js'
-import Ticket from './ticket.js'
 import Nav from './nav.js'
-
+import TicketDetail from './ticketDetail';
+import Ticket from './ticket.js'
 
 
 
@@ -15,8 +15,9 @@ function App() {
       <Nav/>
       <Switch>
         <Route path='/create' exact component={Create} />
+        <Route path={`/ticketDetail/:taskIndex`} exact component={TicketDetail}/>
+        <Route path='/' component={Ticket} />
       </Switch>
-      <Ticket/>
     </Router>
   );
 }
